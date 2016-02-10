@@ -21,7 +21,8 @@ const ircServer = process.env.IRC_SERVER;
 const botNick = process.env.NICK;
 const ircClientOptions = {
   channels: process.env.CHANNEL_LIST.split(' '),
-  // port: process.env.IRC_PORT,
+  port: process.env.IRC_PORT,
+  secure: process.env.SECURE_CONNECTION | false,
   autoRejoin: true,
   floodProtection: true,
   floodProtectionDelay: 1000
