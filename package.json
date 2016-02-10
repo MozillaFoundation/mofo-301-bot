@@ -1,0 +1,28 @@
+{
+  "name": "mozilla-301-bot",
+  "version": "1.0.0",
+  "description": "IRC bot for informing new members of an IRC channel about Mattermoz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mozilla/mozilla-301-bot.git"
+  },
+  "author": "Christopher De Cairos <cade@mozillafoundation.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mozilla/mozilla-301-bot/issues"
+  },
+  "homepage": "https://github.com/mozilla/mozilla-301-bot#readme",
+  "dependencies": {
+    "catbox": "7.1.0",
+    "catbox-redis": "1.0.7",
+    "irc": "0.4.1",
+    "string-template": "1.0.0"
+  },
+  "engines": {
+    "node": "4.3.0"
+  }
+}
