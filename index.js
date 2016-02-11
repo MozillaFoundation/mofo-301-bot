@@ -11,7 +11,7 @@ const redisClient = new catbox.Client(
     host: redisUrl.hostname,
     port: redisUrl.port,
     password: (redisUrl.auth || '').split(':')[1],
-    database: redisUrl.path.length ? redisUrl.path : 0,
+    database: redisUrl.path && redisUrl.path.length > 1 ? redisUrl.path.substr(1) : 0,
     partition: "301-bot"
   })
 );
