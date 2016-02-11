@@ -11,7 +11,7 @@ const redisClient = new catbox.Client(
     host: redisUrl.hostname,
     port: redisUrl.port,
     password: (redisUrl.auth || '').split(':')[1],
-    database: redisUrl.path && redisUrl.path.length > 1 ? redisUrl.path.substr(1) : 0,
+    database: redisUrl.path && redisUrl.path.length > 1 ? redisUrl.path.substr(1) : '0',
     partition: "301-bot"
   })
 );
@@ -22,7 +22,7 @@ const botNick = process.env.NICK;
 const ircClientOptions = {
   channels: process.env.CHANNEL_LIST.split(' '),
   port: process.env.IRC_PORT,
-  secure: process.env.SECURE_CONNECTION === true,
+  secure: process.env.SECURE_CONNECTION === 'true',
   autoRejoin: true,
   floodProtection: true,
   floodProtectionDelay: 1000
@@ -70,9 +70,9 @@ function connectToIRC(redisError) {
     console.error('Connection Error: ', redisError);
     process.exit(1);
   }
-
+console.log(1);
   ircClient = new irc.Client(ircServer, botNick, ircClientOptions);
-
+console.log(2)
   ircClient.addListener('join', handleJoin);
 
   ircClient.addListener('error', (message) => console.error(message));
